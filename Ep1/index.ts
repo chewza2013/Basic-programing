@@ -1,12 +1,12 @@
-const firstname : string = 'Tawanchai'
-console.log(firstname)
+const firstName : string = 'Tawanchai'
+console.log(firstName)
 
 let Y : number = 10
 Y = 20
 console.log(Y)
 
-let อยากกลับบ้าน: boolean = false 
-console.log(อยากกลับบ้าน)
+let iWantToGoHome: boolean = false 
+console.log(iWantToGoHome)
 
 const a: number = 10
 const b: number = 12
