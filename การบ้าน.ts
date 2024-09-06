@@ -1,4 +1,4 @@
-const me = {
+const me1 = {
     firstName: 'Mr.Chuwabchuwab' ,
     LastName : 'Barhost',
     age : 20,
