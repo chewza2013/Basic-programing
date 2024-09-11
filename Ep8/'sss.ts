@@ -469,11 +469,11 @@ const news = {
 
 
 const languageThai = news.results.filter(function (element, index) {
-    return element.language === 'thai'
-}).map(function(element, index){
-    return({
+    return element.language === 'thai',
+        element.source_name === "Thai Pbs News"
+}).map(function (element, index) {
+    return ({
         title: element.title,
-        link: element.link,
         description: element.description,
         source_id: element.source_id,
         image_url: element.image_url
