@@ -469,8 +469,7 @@ const news = {
 
 
 const languageThai = news.results.filter(function (element, index) {
-    return element.language === 'thai',
-        element.source_name === "Thai Pbs News"
+    return element.language === 'thai'&& element.source_name === "Thai Pbs News"
 }).map(function (element, index) {
     return ({
         title: element.title,
