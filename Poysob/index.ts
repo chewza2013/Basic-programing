@@ -5,7 +5,7 @@
 //.unshift ใส่ข้างหน้า
 //.sort เรียงจาก A-Z
 //.reverse เรียงจากZ-A
-
+//.split ตัดตัวออก
 const person = {
     firstName: 'tawanchai',
     lastName: 'boonprasert',
@@ -112,3 +112,81 @@ function updatedPrice(products: {
     })
 } 
 console.log(updatedPrice(productsData))
+
+
+//เปลี่ยนnumberเป็นstring
+
+//ท่ายาก
+const number = [1,2,3,4,5,6,7,8]
+
+function covertToArrayString(array: number[]) {
+    const result: string[] = [];
+
+    for (let i = 0; i < array.length; i++) {
+        result.push(array[i].toString())
+    }
+
+    return result
+}
+
+console.log(covertToArrayString(number))
+
+//ท่าง่าย
+function covertToArrayStringwith(array: number[]) {
+    return array.map(function(element, index) {
+        return element.toString()
+    })
+}
+
+console.log(covertToArrayStringwith(number))
+
+
+const names = ["John Doe", "Jane Smith", "Jack Brown"];
+
+function cutNamewithMap(array: string[]) {
+    return array.map(function(element, index) {
+        const cutName = element.split(" ")
+        return {
+            firstName: cutName[0],
+            lastName: cutName[1]
+        }
+    })
+}
+
+console.log(cutNamewithMap(names))
+
+
+const inventory = {
+    name: 'Laptop Store',
+    quantity: 5,
+    isAvailable: function () {
+        return this.quantity > 0
+    }
+}
+
+//console.log(inventory.isAvailable())
+
+const account = {
+    name: 'ออมกับข้าว',
+    balance: 0,
+    desposiit: function(amount: number) {
+        if (amount < 0) {
+            console.log('กรุณาระบุจำนวนเงิน')
+            return
+        }
+        this.balance = this.balance + amount
+        console.log('ฝากเงินจำนวน' + amount + 'ยอดคงเหลือ' +this.balance)
+    },
+    withdraw: function(amount: number) {
+        if (amount > this.balance) {
+            console.log('เงินไม่พอ คุณมียอดคงเหลือ' + this.balance)
+            return
+        }
+
+        this.balance = this.balance - amount
+        console.log('ถอนเงิน' + amount + 'ยอดคงเหลือ' +this.balance)
+    }
+}
+
+account.desposiit(699)
+account.withdraw(500)
